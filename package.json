@@ -1,0 +1,24 @@
+{
+  "name": "face-space",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MJerich/face-space.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJerich/face-space/issues"
+  },
+  "homepage": "https://github.com/MJerich/face-space#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6"
+  }
+}
