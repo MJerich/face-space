@@ -3,12 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new Schema(
     {
-        // set custom id to avoid confusion with parent comment's _id field
-        ReactionId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId()
-        },
-        ReactionBody: {
+        reactionbody: {
             type: String,
             required: true,
             maxlength: 280
@@ -25,8 +20,10 @@ const ReactionSchema = new Schema(
     },
     {
         toJSON: {
-            getters: true
-        }
+            virtuals: true,
+            getters: true,
+        },
+        id: false
     }
 );
 
@@ -64,6 +61,7 @@ ThoughtSchema.virtual('reactionCount').get(function () {
 
 // create the Thought model useing the schema
 const Thought = model('Thought', ThoughtSchema);
+const Reaction = model('Reaction', ReactionSchema);
 
 // export the model
-module.exports = Thought;
+module.exports = { Thought, Reaction };
